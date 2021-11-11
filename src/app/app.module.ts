@@ -8,7 +8,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 // @ts-ignore
 @NgModule({
@@ -17,7 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TaskListComponent,
     TaskDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,

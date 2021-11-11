@@ -1,13 +1,22 @@
 <div *ngIf="task">
 
-  <h2>{{task.description | uppercase}} Details</h2>
+  <h2>{{task.description | uppercase}}</h2>
   <div><span>id: </span>{{task.id}}</div>
-  <div>
-    <label for="task-description">task description: </label>
-    <input id="task-description" [(ngModel)]="task.description" placeholder="description">
-  </div>
+  <br>
+  <label for="new-description">New description: </label>
+  <input id="new-description" #taskDescription value="{{task.description}}" />
+  <br><br>
+  <label for="new-status">New status: </label>
+  <select name="new-status" id="new-status" #taskStatus [value]=task.status>
+    <option value="PENDING">Pending</option>
+    <option value="IN_PROGRESS">In progress</option>
+    <option value="FINISHED">Finished</option>
+  </select>
+  <br><br>
 
+  <button class="add-button" (click)="updateTask(task.id, taskStatus.value, taskDescription.value);">
+    Update Task
+  </button>
 </div>
 
 <button (click)="goBack()">go back</button>
-<button (click)="save()">save</button>
