@@ -1,10 +1,10 @@
-<div *ngIf="task">
+<div *ngIf="task" style="margin-left: 2em">
 
   <h2>{{task.description | uppercase}}</h2>
-  <div><span>id: </span>{{task.id}}</div>
-  <br>
   <label for="new-description">New description: </label>
-  <input id="new-description" #taskDescription value="{{task.description}}" />
+  <br>
+  <textarea rows="4" cols="50"
+            id="new-description" #taskDescription value="{{task.description}}"></textarea>
   <br><br>
   <label for="new-status">New status: </label>
   <select name="new-status" id="new-status" #taskStatus [value]=task.status>
@@ -17,6 +17,6 @@
   <button class="add-button" (click)="updateTask(task.id, taskStatus.value, taskDescription.value);">
     Update Task
   </button>
+  <button (click)="goBack()">go back</button>
 </div>
 
-<button (click)="goBack()">go back</button>

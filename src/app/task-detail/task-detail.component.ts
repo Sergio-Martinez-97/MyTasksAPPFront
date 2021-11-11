@@ -29,8 +29,7 @@ export class TaskDetailComponent implements OnInit {
 
   updateTask(id: number, status: string, description: string): void {
     let newTask = {id: id, status: status, description: description};
-      this.taskService.updateTask(newTask)
-        .subscribe();
+    this.taskService.updateTask(newTask).subscribe();
   }
 
   goBack(): void {

@@ -1,6 +1,8 @@
-<div>
+<div style="margin-left: 2em">
   <label for="new-description">Task description: </label>
-  <input id="new-description" #taskDescription />
+  <br>
+  <textarea  rows="4" cols="50"
+             id="new-description" #taskDescription></textarea>
   <br><br>
   <label for="new-status">Task status: </label>
   <select name="new-status" id="new-status" #taskStatus>
@@ -15,4 +17,5 @@
     taskDescription.value=''; taskStatus.value=''">
     Add Task
   </button>
+  <button (click)="goBack()">go back</button>
 </div>

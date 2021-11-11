@@ -17,23 +17,6 @@
   max-width: 60em;
   display: flex;
 }
-.tasks li:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
-  left: .1em;
-}
-.tasks li.selected {
-  background-color: black;
-  color: white;
-}
-.tasks li.selected:hover {
-  background-color: #505050;
-  color: white;
-}
-.tasks li.selected:active {
-  background-color: black;
-  color: white;
-}
 .tasks .badge {
   display: inline-block;
   font-size: small;
@@ -56,4 +39,13 @@ button {
 
 input {
   padding: .5rem;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-row:hover {
+  cursor: pointer;
+  background: #492a21;
 }

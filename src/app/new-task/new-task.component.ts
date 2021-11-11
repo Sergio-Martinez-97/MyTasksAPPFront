@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TaskService} from "../task.service";
 import {Task} from "../task";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,8 @@ export class NewTaskComponent implements OnInit {
 
   tasks: Task[] = [];
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService,
+              private location: Location) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +24,10 @@ export class NewTaskComponent implements OnInit {
     if (!description || !status) { return; }
     this.taskService.addTask(status, description)
       .subscribe();
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
